@@ -19,26 +19,26 @@
     --text: #f5f3ff;
     --text-2: rgba(245, 243, 255, 0.72);
     --text-3: rgba(245, 243, 255, 0.48);
-
+ 
     --accent-1: #a78bfa;
     --accent-2: #f472b6;
     --accent-3: #60a5fa;
     --accent-4: #fbbf24;
-
+ 
     --grad-primary: linear-gradient(135deg, #a78bfa 0%, #f472b6 50%, #fbbf24 100%);
     --grad-text: linear-gradient(120deg, #c4b5fd 0%, #f0abfc 50%, #fbbf24 100%);
-
+ 
     --radius: 20px;
     --radius-lg: 28px;
     --radius-xl: 40px;
-
+ 
     --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   }
-
+ 
   * { box-sizing: border-box; margin: 0; padding: 0; }
-
+ 
   html { -webkit-font-smoothing: antialiased; }
-
+ 
   body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     background: var(--bg);
@@ -48,7 +48,7 @@
     position: relative;
     min-height: 100vh;
   }
-
+ 
   /* ======= Animated Background Blobs ======= */
   .bg-wrap {
     position: fixed;
@@ -96,7 +96,7 @@
     40% { transform: translate(250px, -100px) scale(0.85); }
     70% { transform: translate(100px, -200px) scale(1.1); }
   }
-
+ 
   .grain {
     position: fixed;
     inset: 0;
@@ -106,9 +106,9 @@
     mix-blend-mode: overlay;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
-
+ 
   main, nav { position: relative; z-index: 2; }
-
+ 
   .container {
     width: 100%;
     max-width: 920px;
@@ -116,7 +116,7 @@
     padding: 0 1.5rem;
   }
   @media (min-width: 768px) { .container { padding: 0 2rem; } }
-
+ 
   /* ======= Navigation ======= */
   nav {
     position: fixed;
@@ -183,19 +183,19 @@
     color: var(--text);
     transform: translateX(-2px);
   }
-
+ 
   /* ======= Page Layout ======= */
   .page {
     padding: 8rem 0 4rem;
   }
   @media (min-width: 768px) { .page { padding: 9rem 0 5rem; } }
-
+ 
   .page-header {
     text-align: center;
     margin-bottom: 2.5rem;
     animation: fadeUp 0.9s var(--ease-out) 0.3s backwards;
   }
-
+ 
   .pill {
     display: inline-flex;
     align-items: center;
@@ -217,7 +217,7 @@
     box-shadow: 0 0 10px var(--accent-2);
     animation: pulse 1.8s ease-in-out infinite;
   }
-
+ 
   .page-header h1 {
     font-family: 'Clash Display', sans-serif;
     font-size: clamp(2rem, 6vw, 3.5rem);
@@ -248,7 +248,7 @@
     margin: 0 auto;
     font-size: 1rem;
   }
-
+ 
   /* Step indicator */
   .steps {
     display: flex;
@@ -294,22 +294,26 @@
     width: 30px; height: 1px;
     background: var(--border);
   }
-
+ 
   /* Card containing the booking content */
   .bk-card {
-    background: linear-gradient(180deg, rgba(20, 16, 38, 0.6), rgba(13, 11, 26, 0.6));
+    background: rgba(255, 255, 255, 0.02);
     border: 1px solid var(--border-strong);
     border-radius: var(--radius-xl);
-    padding: 2rem 1.5rem;
+    padding: 0.75rem;
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     box-shadow: 0 40px 80px rgba(0,0,0,0.3);
     animation: fadeUp 1s var(--ease-out) 0.7s backwards;
+    overflow: hidden;
   }
   @media (min-width: 768px) {
-    .bk-card { padding: 3rem; }
+    .bk-card { padding: 1rem; }
   }
-
+  #ghl-booking-iframe {
+    border-radius: calc(var(--radius-xl) - 12px);
+  }
+ 
   /* Step 1: Date+Time picker */
   .bk-picker {
     display: grid;
@@ -335,7 +339,7 @@
     width: 20px; height: 1px;
     background: var(--accent-1);
   }
-
+ 
   .bk-dates {
     display: flex;
     flex-direction: column;
@@ -347,7 +351,7 @@
   .bk-dates::-webkit-scrollbar { width: 4px; }
   .bk-dates::-webkit-scrollbar-track { background: transparent; }
   .bk-dates::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 4px; }
-
+ 
   .bk-date {
     display: flex;
     justify-content: space-between;
@@ -383,7 +387,7 @@
   .bk-date.selected .bk-date-meta {
     color: var(--accent-1);
   }
-
+ 
   .bk-times {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -396,7 +400,7 @@
   .bk-times::-webkit-scrollbar { width: 4px; }
   .bk-times::-webkit-scrollbar-track { background: transparent; }
   .bk-times::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 4px; }
-
+ 
   .bk-time-empty {
     grid-column: 1 / -1;
     padding: 2rem 1rem;
@@ -431,7 +435,7 @@
     border-color: transparent;
     box-shadow: 0 8px 24px rgba(167,139,250,0.3);
   }
-
+ 
   /* Step 2: Form */
   .bk-form { display: none; }
   .bk-form.active {
@@ -439,7 +443,7 @@
     animation: fadeUp 0.5s var(--ease-out);
   }
   .bk-picker-wrap.hidden { display: none; }
-
+ 
   .bk-summary {
     padding: 1rem 1.25rem;
     background: linear-gradient(135deg, rgba(167,139,250,0.12), rgba(244,114,182,0.08));
@@ -479,7 +483,7 @@
     border-color: var(--accent-1);
     color: var(--text);
   }
-
+ 
   .bk-fields {
     display: grid;
     grid-template-columns: 1fr;
@@ -519,7 +523,7 @@
   .bk-field textarea::placeholder {
     color: var(--text-3);
   }
-
+ 
   .bk-submit {
     width: 100%;
     padding: 1rem 1.5rem;
@@ -548,7 +552,7 @@
     opacity: 0.6;
     cursor: not-allowed;
   }
-
+ 
   .bk-success {
     display: none;
     text-align: center;
@@ -609,7 +613,7 @@
     transition: color 0.3s;
   }
   .bk-success-home:hover { color: var(--accent-1); }
-
+ 
   /* Trust info below the card */
   .trust-row {
     display: flex;
@@ -630,12 +634,12 @@
     width: 16px; height: 16px;
     color: var(--accent-1);
   }
-
+ 
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(30px); }
     to { opacity: 1; transform: translateY(0); }
   }
-
+ 
   ::selection {
     background: var(--accent-1);
     color: #1a0b2e;
@@ -643,7 +647,7 @@
 </style>
 </head>
 <body>
-
+ 
 <!-- Animated Background -->
 <div class="bg-wrap">
   <div class="blob b1"></div>
@@ -651,7 +655,7 @@
   <div class="blob b3"></div>
 </div>
 <div class="grain"></div>
-
+ 
 <!-- Navigation -->
 <nav>
   <a href="/" class="logo">
@@ -660,114 +664,31 @@
   </a>
   <a href="/" class="nav-back">← Zurück zur Seite</a>
 </nav>
-
+ 
 <main>
   <div class="container">
     <section class="page">
-
+ 
       <div class="page-header">
         <div class="pill">
           <span class="pill-dot"></span>
-          Strategiegespräch · 30 Min · kostenlos
+          Strategiegespräch · 45 Min · kostenlos
         </div>
         <h1>Wähl deinen <em>Termin.</em></h1>
-        <p>In 30 Minuten zeigen wir dir, wo dein Marketing schläft — und wie du es weckst.</p>
+        <p>In 45 Minuten zeigen wir dir, wo dein Marketing schläft — und wie du es weckst.</p>
       </div>
-
-      <!-- Step indicator -->
-      <div class="steps" id="bkSteps">
-        <div class="step active" data-step="1">
-          <div class="step-num">1</div>
-          <span>Termin</span>
-        </div>
-        <div class="step-divider"></div>
-        <div class="step" data-step="2">
-          <div class="step-num">2</div>
-          <span>Daten</span>
-        </div>
-        <div class="step-divider"></div>
-        <div class="step" data-step="3">
-          <div class="step-num">3</div>
-          <span>Fertig</span>
-        </div>
-      </div>
-
-      <!-- Booking Card -->
+ 
+      <!-- Booking Card mit GHL-Kalender -->
       <div class="bk-card">
-
-        <!-- Step 1: Picker -->
-        <div class="bk-picker-wrap" id="bkPickerWrap">
-          <div class="bk-picker">
-            <div>
-              <div class="bk-col-title">Datum</div>
-              <div class="bk-dates" id="bkDates"></div>
-            </div>
-            <div>
-              <div class="bk-col-title">Uhrzeit</div>
-              <div class="bk-times" id="bkTimes">
-                <div class="bk-time-empty">Wähle zuerst ein Datum</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Step 2: Form -->
-        <div class="bk-form" id="bkForm">
-          <div class="bk-summary">
-            <div class="bk-summary-text">
-              <div class="bk-summary-label">Dein Termin</div>
-              <div class="bk-summary-value" id="bkSummaryValue">–</div>
-            </div>
-            <button type="button" class="bk-summary-back" id="bkBack">← Ändern</button>
-          </div>
-          <form id="bkFormEl" action="https://formspree.io/f/xnjledlr" method="POST">
-            <input type="hidden" name="termin" id="bkHiddenTermin" />
-            <input type="hidden" name="_subject" value="Neue Terminanfrage – ilyd marketing" />
-            <div class="bk-fields">
-              <div class="bk-row-2">
-                <div class="bk-field">
-                  <label for="bkName">Name *</label>
-                  <input type="text" id="bkName" name="name" placeholder="Max Mustermann" required />
-                </div>
-                <div class="bk-field">
-                  <label for="bkEmail">E-Mail *</label>
-                  <input type="email" id="bkEmail" name="email" placeholder="max@firma.ch" required />
-                </div>
-              </div>
-              <div class="bk-row-2">
-                <div class="bk-field">
-                  <label for="bkCompany">Firma</label>
-                  <input type="text" id="bkCompany" name="firma" placeholder="Mustermann GmbH" />
-                </div>
-                <div class="bk-field">
-                  <label for="bkPhone">Telefon</label>
-                  <input type="tel" id="bkPhone" name="telefon" placeholder="+41 79 ..." />
-                </div>
-              </div>
-              <div class="bk-field">
-                <label for="bkMessage">Worum geht's? (optional)</label>
-                <textarea id="bkMessage" name="nachricht" rows="3" placeholder="Erzähl kurz von deinem Business und deinen Zielen..."></textarea>
-              </div>
-              <button type="submit" class="bk-submit" id="bkSubmit">
-                Termin bestätigen
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-              </button>
-            </div>
-          </form>
-        </div>
-
-        <!-- Step 3: Success -->
-        <div class="bk-success" id="bkSuccess">
-          <div class="bk-success-icon">✓</div>
-          <h2>Termin gebucht!</h2>
-          <p>Wir haben deine Anfrage erhalten und melden uns innerhalb von 24 Stunden mit der finalen Bestätigung und einem Zoom-Link.</p>
-          <div class="bk-success-meta" id="bkSuccessMeta">–</div>
-          <br>
-          <a href="/" class="bk-success-home">← Zurück zur Startseite</a>
-        </div>
-
+        <iframe
+          src="https://api.leadconnectorhq.com/widget/booking/tbyfwOwCzUZ3a0N3vMxN"
+          id="ghl-booking-iframe"
+          style="width:100%; border:none; overflow:hidden; min-height:700px; display:block;"
+          scrolling="no"
+          title="Termin buchen — ilyd marketing">
+        </iframe>
       </div>
-
+ 
       <!-- Trust signals -->
       <div class="trust-row">
         <div class="trust-item">
@@ -783,160 +704,20 @@
           Antwort in unter 24h
         </div>
       </div>
-
+ 
     </section>
   </div>
 </main>
-
+ 
 <script>
-  /* ===== BOOKING SYSTEM ===== */
-  const TIME_SLOTS = ['09:00','09:30','10:00','10:30','11:00','11:30','14:00','14:30','15:00','15:30','16:00','16:30','17:00','17:30'];
-  const DAYS_DE = ['Sonntag','Montag','Dienstag','Mittwoch','Donnerstag','Freitag','Samstag'];
-  const MONTHS_DE = ['Jan','Feb','Mär','Apr','Mai','Jun','Jul','Aug','Sep','Okt','Nov','Dez'];
-
-  const bkDates = document.getElementById('bkDates');
-  const bkTimes = document.getElementById('bkTimes');
-  const bkPickerWrap = document.getElementById('bkPickerWrap');
-  const bkForm = document.getElementById('bkForm');
-  const bkSuccess = document.getElementById('bkSuccess');
-  const bkSummaryValue = document.getElementById('bkSummaryValue');
-  const bkSuccessMeta = document.getElementById('bkSuccessMeta');
-  const bkHiddenTermin = document.getElementById('bkHiddenTermin');
-  const bkBack = document.getElementById('bkBack');
-  const bkFormEl = document.getElementById('bkFormEl');
-  const bkSubmit = document.getElementById('bkSubmit');
-  const stepEls = document.querySelectorAll('#bkSteps .step');
-
-  let selectedDate = null;
-  let selectedTime = null;
-
-  function setStep(n) {
-    stepEls.forEach(el => {
-      const s = parseInt(el.dataset.step, 10);
-      el.classList.remove('active', 'done');
-      if (s < n) el.classList.add('done');
-      else if (s === n) el.classList.add('active');
-    });
-  }
-
-  function generateDates() {
-    bkDates.innerHTML = '';
-    const today = new Date();
-    let count = 0;
-    let offset = 1;
-    while (count < 21) {
-      const d = new Date(today);
-      d.setDate(today.getDate() + offset);
-      offset++;
-      const dow = d.getDay();
-      if (dow === 0 || dow === 6) continue;
-
-      const btn = document.createElement('button');
-      btn.type = 'button';
-      btn.className = 'bk-date';
-      btn.dataset.date = d.toISOString().split('T')[0];
-
-      const dayName = DAYS_DE[dow];
-      const dayNum = d.getDate();
-      const month = MONTHS_DE[d.getMonth()];
-      const isThisWeek = (d - today) / (1000*60*60*24) < 7;
-
-      btn.innerHTML = `
-        <span class="bk-date-day">${dayName}, ${dayNum}. ${month}</span>
-        <span class="bk-date-meta">${isThisWeek ? 'diese Woche' : 'verfügbar'}</span>
-      `;
-      btn.addEventListener('click', () => selectDate(btn, d));
-      bkDates.appendChild(btn);
-      count++;
-    }
-  }
-
-  function selectDate(btn, dateObj) {
-    document.querySelectorAll('.bk-date').forEach(b => b.classList.remove('selected'));
-    btn.classList.add('selected');
-    selectedDate = dateObj;
-    selectedTime = null;
-    renderTimes();
-  }
-
-  function renderTimes() {
-    bkTimes.innerHTML = '';
-    if (!selectedDate) {
-      bkTimes.innerHTML = '<div class="bk-time-empty">Wähle zuerst ein Datum</div>';
-      return;
-    }
-    TIME_SLOTS.forEach(time => {
-      const btn = document.createElement('button');
-      btn.type = 'button';
-      btn.className = 'bk-time';
-      btn.textContent = time;
-      btn.addEventListener('click', () => selectTime(btn, time));
-      bkTimes.appendChild(btn);
-    });
-  }
-
-  function selectTime(btn, time) {
-    document.querySelectorAll('.bk-time').forEach(b => b.classList.remove('selected'));
-    btn.classList.add('selected');
-    selectedTime = time;
-    setTimeout(() => goToForm(), 350);
-  }
-
-  function goToForm() {
-    const dateStr = `${DAYS_DE[selectedDate.getDay()]}, ${selectedDate.getDate()}. ${MONTHS_DE[selectedDate.getMonth()]} ${selectedDate.getFullYear()}`;
-    const summary = `${dateStr} · ${selectedTime} Uhr`;
-    bkSummaryValue.textContent = summary;
-    bkHiddenTermin.value = summary;
-    bkPickerWrap.classList.add('hidden');
-    bkForm.classList.add('active');
-    bkSuccess.classList.remove('active');
-    setStep(2);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
-  function backToPicker() {
-    bkForm.classList.remove('active');
-    bkPickerWrap.classList.remove('hidden');
-    setStep(1);
-  }
-
-  bkBack.addEventListener('click', backToPicker);
-
-  /* Form submit via Formspree (AJAX) */
-  bkFormEl.addEventListener('submit', async e => {
-    e.preventDefault();
-    bkSubmit.disabled = true;
-    bkSubmit.innerHTML = 'Wird gesendet...';
-
-    const formData = new FormData(bkFormEl);
-    const action = bkFormEl.getAttribute('action');
-
-    try {
-      const res = await fetch(action, {
-        method: 'POST',
-        body: formData,
-        headers: { 'Accept': 'application/json' }
-      });
-      if (res.ok) {
-        bkForm.classList.remove('active');
-        bkSuccess.classList.add('active');
-        bkSuccessMeta.textContent = bkSummaryValue.textContent;
-        setStep(3);
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      } else {
-        alert('Etwas ist schiefgelaufen. Bitte schreib uns direkt: hello@ilyd.io');
-      }
-    } catch (err) {
-      alert('Etwas ist schiefgelaufen. Bitte schreib uns direkt: hello@ilyd.io');
-    } finally {
-      bkSubmit.disabled = false;
-      bkSubmit.innerHTML = 'Termin bestätigen <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
-    }
-  });
-
-  /* Initialize */
-  generateDates();
+  /* GoHighLevel Booking Widget – Auto-Resize */
+  (function () {
+    var script = document.createElement('script');
+    script.src = 'https://link.msgsndr.com/js/form_embed.js';
+    script.async = true;
+    document.body.appendChild(script);
+  })();
 </script>
-
+ 
 </body>
 </html>
