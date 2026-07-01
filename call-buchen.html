@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Termin buchen — ilyd marketing</title>
+<title>Erstgespräch buchen | ilyd Marketing fürs Gesundheitswesen</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -19,26 +19,26 @@
     --text: #f5f3ff;
     --text-2: rgba(245, 243, 255, 0.72);
     --text-3: rgba(245, 243, 255, 0.48);
- 
+
     --accent-1: #a78bfa;
     --accent-2: #f472b6;
     --accent-3: #60a5fa;
     --accent-4: #fbbf24;
- 
+
     --grad-primary: linear-gradient(135deg, #a78bfa 0%, #f472b6 50%, #fbbf24 100%);
     --grad-text: linear-gradient(120deg, #c4b5fd 0%, #f0abfc 50%, #fbbf24 100%);
- 
+
     --radius: 20px;
     --radius-lg: 28px;
     --radius-xl: 40px;
- 
+
     --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   }
- 
+
   * { box-sizing: border-box; margin: 0; padding: 0; }
- 
+
   html { -webkit-font-smoothing: antialiased; }
- 
+
   body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     background: var(--bg);
@@ -48,7 +48,7 @@
     position: relative;
     min-height: 100vh;
   }
- 
+
   /* ======= Animated Background Blobs ======= */
   .bg-wrap {
     position: fixed;
@@ -96,7 +96,7 @@
     40% { transform: translate(250px, -100px) scale(0.85); }
     70% { transform: translate(100px, -200px) scale(1.1); }
   }
- 
+
   .grain {
     position: fixed;
     inset: 0;
@@ -106,9 +106,9 @@
     mix-blend-mode: overlay;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
- 
+
   main, nav { position: relative; z-index: 2; }
- 
+
   .container {
     width: 100%;
     max-width: 920px;
@@ -116,7 +116,7 @@
     padding: 0 1.5rem;
   }
   @media (min-width: 768px) { .container { padding: 0 2rem; } }
- 
+
   /* ======= Navigation ======= */
   nav {
     position: fixed;
@@ -183,19 +183,19 @@
     color: var(--text);
     transform: translateX(-2px);
   }
- 
+
   /* ======= Page Layout ======= */
   .page {
     padding: 8rem 0 4rem;
   }
   @media (min-width: 768px) { .page { padding: 9rem 0 5rem; } }
- 
+
   .page-header {
     text-align: center;
     margin-bottom: 2.5rem;
     animation: fadeUp 0.9s var(--ease-out) 0.3s backwards;
   }
- 
+
   .pill {
     display: inline-flex;
     align-items: center;
@@ -217,7 +217,7 @@
     box-shadow: 0 0 10px var(--accent-2);
     animation: pulse 1.8s ease-in-out infinite;
   }
- 
+
   .page-header h1 {
     font-family: 'Clash Display', sans-serif;
     font-size: clamp(2rem, 6vw, 3.5rem);
@@ -248,53 +248,7 @@
     margin: 0 auto;
     font-size: 1rem;
   }
- 
-  /* Step indicator */
-  .steps {
-    display: flex;
-    justify-content: center;
-    gap: 0.75rem;
-    margin-bottom: 2.5rem;
-    animation: fadeUp 0.9s var(--ease-out) 0.5s backwards;
-  }
-  .step {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.8rem;
-    color: var(--text-3);
-    font-weight: 500;
-  }
-  .step-num {
-    width: 26px; height: 26px;
-    border-radius: 50%;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: var(--text-2);
-    transition: all 0.4s var(--ease-out);
-  }
-  .step.active .step-num {
-    background: var(--grad-primary);
-    color: #1a0b2e;
-    border-color: transparent;
-    box-shadow: 0 4px 16px rgba(167,139,250,0.4);
-  }
-  .step.active { color: var(--text); }
-  .step.done .step-num {
-    background: rgba(167,139,250,0.2);
-    border-color: var(--accent-1);
-    color: var(--accent-1);
-  }
-  .step-divider {
-    width: 30px; height: 1px;
-    background: var(--border);
-  }
- 
+
   /* Card containing the booking content */
   .bk-card {
     background: rgba(255, 255, 255, 0.02);
@@ -313,307 +267,7 @@
   #ghl-booking-iframe {
     border-radius: calc(var(--radius-xl) - 12px);
   }
- 
-  /* Step 1: Date+Time picker */
-  .bk-picker {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-  @media (min-width: 700px) {
-    .bk-picker { grid-template-columns: 1fr 1fr; gap: 2rem; }
-  }
-  .bk-col-title {
-    font-size: 0.78rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--accent-1);
-    margin-bottom: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-  .bk-col-title::before {
-    content: '';
-    width: 20px; height: 1px;
-    background: var(--accent-1);
-  }
- 
-  .bk-dates {
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-    max-height: 380px;
-    overflow-y: auto;
-    padding-right: 0.25rem;
-  }
-  .bk-dates::-webkit-scrollbar { width: 4px; }
-  .bk-dates::-webkit-scrollbar-track { background: transparent; }
-  .bk-dates::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 4px; }
- 
-  .bk-date {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.85rem 1rem;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    cursor: pointer;
-    transition: all 0.25s var(--ease-out);
-    color: var(--text);
-    font-family: inherit;
-    text-align: left;
-  }
-  .bk-date:hover {
-    border-color: var(--accent-1);
-    background: var(--surface-2);
-    transform: translateX(4px);
-  }
-  .bk-date.selected {
-    background: linear-gradient(135deg, rgba(167,139,250,0.2), rgba(244,114,182,0.15));
-    border-color: var(--accent-1);
-    box-shadow: 0 8px 24px rgba(167,139,250,0.25);
-  }
-  .bk-date-day {
-    font-weight: 600;
-    font-size: 0.95rem;
-  }
-  .bk-date-meta {
-    font-size: 0.78rem;
-    color: var(--text-3);
-  }
-  .bk-date.selected .bk-date-meta {
-    color: var(--accent-1);
-  }
- 
-  .bk-times {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.5rem;
-    align-content: start;
-    max-height: 380px;
-    overflow-y: auto;
-    padding-right: 0.25rem;
-  }
-  .bk-times::-webkit-scrollbar { width: 4px; }
-  .bk-times::-webkit-scrollbar-track { background: transparent; }
-  .bk-times::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 4px; }
- 
-  .bk-time-empty {
-    grid-column: 1 / -1;
-    padding: 2rem 1rem;
-    text-align: center;
-    color: var(--text-3);
-    font-size: 0.9rem;
-    background: var(--surface);
-    border: 1px dashed var(--border);
-    border-radius: 14px;
-  }
-  .bk-time {
-    padding: 0.75rem 0.5rem;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    cursor: pointer;
-    transition: all 0.25s var(--ease-out);
-    color: var(--text);
-    font-family: inherit;
-    font-weight: 600;
-    font-size: 0.9rem;
-    text-align: center;
-  }
-  .bk-time:hover:not(.selected) {
-    border-color: var(--accent-1);
-    background: var(--surface-2);
-    transform: translateY(-2px);
-  }
-  .bk-time.selected {
-    background: var(--grad-primary);
-    color: #1a0b2e;
-    border-color: transparent;
-    box-shadow: 0 8px 24px rgba(167,139,250,0.3);
-  }
- 
-  /* Step 2: Form */
-  .bk-form { display: none; }
-  .bk-form.active {
-    display: block;
-    animation: fadeUp 0.5s var(--ease-out);
-  }
-  .bk-picker-wrap.hidden { display: none; }
- 
-  .bk-summary {
-    padding: 1rem 1.25rem;
-    background: linear-gradient(135deg, rgba(167,139,250,0.12), rgba(244,114,182,0.08));
-    border: 1px solid var(--border-strong);
-    border-radius: 16px;
-    margin-bottom: 1.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-  .bk-summary-text { font-size: 0.9rem; }
-  .bk-summary-label {
-    color: var(--text-3);
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    margin-bottom: 0.2rem;
-  }
-  .bk-summary-value {
-    font-weight: 600;
-    color: var(--text);
-  }
-  .bk-summary-back {
-    background: transparent;
-    border: 1px solid var(--border-strong);
-    color: var(--text-2);
-    padding: 0.45rem 0.9rem;
-    border-radius: 100px;
-    font-size: 0.8rem;
-    cursor: pointer;
-    transition: all 0.3s var(--ease-out);
-    font-family: inherit;
-  }
-  .bk-summary-back:hover {
-    border-color: var(--accent-1);
-    color: var(--text);
-  }
- 
-  .bk-fields {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-  @media (min-width: 600px) {
-    .bk-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-  }
-  .bk-field label {
-    display: block;
-    font-size: 0.8rem;
-    font-weight: 500;
-    color: var(--text-2);
-    margin-bottom: 0.4rem;
-  }
-  .bk-field input,
-  .bk-field textarea {
-    width: 100%;
-    padding: 0.85rem 1rem;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    color: var(--text);
-    font-family: inherit;
-    font-size: 0.95rem;
-    transition: all 0.3s var(--ease-out);
-    resize: vertical;
-  }
-  .bk-field input:focus,
-  .bk-field textarea:focus {
-    outline: none;
-    border-color: var(--accent-1);
-    background: var(--surface-2);
-    box-shadow: 0 0 0 3px rgba(167,139,250,0.15);
-  }
-  .bk-field input::placeholder,
-  .bk-field textarea::placeholder {
-    color: var(--text-3);
-  }
- 
-  .bk-submit {
-    width: 100%;
-    padding: 1rem 1.5rem;
-    background: var(--grad-primary);
-    background-size: 200% 200%;
-    color: #1a0b2e;
-    border: none;
-    border-radius: 100px;
-    font-family: inherit;
-    font-weight: 600;
-    font-size: 0.95rem;
-    cursor: pointer;
-    transition: all 0.3s var(--ease-out);
-    margin-top: 0.5rem;
-    animation: gradientShift 6s ease infinite;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-  }
-  .bk-submit:hover:not(:disabled) {
-    transform: translateY(-2px);
-    box-shadow: 0 20px 40px rgba(167,139,250,0.4);
-  }
-  .bk-submit:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-  }
- 
-  .bk-success {
-    display: none;
-    text-align: center;
-    padding: 2rem 1rem;
-  }
-  .bk-success.active {
-    display: block;
-    animation: fadeUp 0.5s var(--ease-out);
-  }
-  .bk-success-icon {
-    width: 90px; height: 90px;
-    margin: 0 auto 1.5rem;
-    border-radius: 50%;
-    background: var(--grad-primary);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2.8rem;
-    color: #1a0b2e;
-    animation: successPop 0.6s var(--ease-out);
-    box-shadow: 0 20px 60px rgba(167,139,250,0.4);
-  }
-  @keyframes successPop {
-    0% { transform: scale(0); }
-    60% { transform: scale(1.15); }
-    100% { transform: scale(1); }
-  }
-  .bk-success h2 {
-    font-family: 'Clash Display', sans-serif;
-    font-size: clamp(1.6rem, 4vw, 2.2rem);
-    font-weight: 600;
-    margin-bottom: 0.75rem;
-    letter-spacing: -0.02em;
-  }
-  .bk-success p {
-    color: var(--text-2);
-    max-width: 460px;
-    margin: 0 auto 1.5rem;
-  }
-  .bk-success-meta {
-    display: inline-block;
-    padding: 0.6rem 1.2rem;
-    background: var(--surface);
-    border: 1px solid var(--border-strong);
-    border-radius: 100px;
-    color: var(--text);
-    font-size: 0.9rem;
-    font-weight: 500;
-  }
-  .bk-success-home {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    margin-top: 2rem;
-    color: var(--text-2);
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: color 0.3s;
-  }
-  .bk-success-home:hover { color: var(--accent-1); }
- 
+
   /* Trust info below the card */
   .trust-row {
     display: flex;
@@ -634,28 +288,26 @@
     width: 16px; height: 16px;
     color: var(--accent-1);
   }
- 
+
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(30px); }
     to { opacity: 1; transform: translateY(0); }
   }
- 
+
   ::selection {
     background: var(--accent-1);
     color: #1a0b2e;
   }
 </style>
 </head>
-<body>
- 
-<!-- Animated Background -->
+<body><!-- Animated Background -->
 <div class="bg-wrap">
   <div class="blob b1"></div>
   <div class="blob b2"></div>
   <div class="blob b3"></div>
 </div>
 <div class="grain"></div>
- 
+
 <!-- Navigation -->
 <nav>
   <a href="/" class="logo">
@@ -664,20 +316,20 @@
   </a>
   <a href="/" class="nav-back">← Zurück zur Seite</a>
 </nav>
- 
+
 <main>
   <div class="container">
     <section class="page">
- 
+
       <div class="page-header">
         <div class="pill">
           <span class="pill-dot"></span>
-          Strategiegespräch · 45 Min · kostenlos
+          Erstgespräch · 45 Min · unverbindlich
         </div>
-        <h1>Wähl deinen <em>Termin.</em></h1>
-        <p>In 45 Minuten zeigen wir dir, wo dein Marketing schläft — und wie du es weckst.</p>
+        <h1>Wählt euren <em>Termin.</em></h1>
+        <p>In 45 Minuten schauen wir an, was ihr braucht (Bewerbungen oder neue Klienten) und wie ihr das über Meta löst, statt weiter auf den Zufall zu warten.</p>
       </div>
- 
+
       <!-- Booking Card mit GHL-Kalender -->
       <div class="bk-card">
         <iframe
@@ -685,32 +337,32 @@
           id="ghl-booking-iframe"
           style="width:100%; border:none; overflow:hidden; min-height:700px; display:block;"
           scrolling="no"
-          title="Termin buchen — ilyd marketing">
+          title="Erstgespräch buchen | ilyd">
         </iframe>
       </div>
- 
+
       <!-- Trust signals -->
       <div class="trust-row">
         <div class="trust-item">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3 8-8M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0"/></svg>
-          100% kostenlos
+          Unverbindlich
         </div>
         <div class="trust-item">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3 8-8M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0"/></svg>
-          Keine Verkaufstaktiken
+          Von jemandem, der aus der Pflege kommt
         </div>
         <div class="trust-item">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3 8-8M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0"/></svg>
           Antwort in unter 24h
         </div>
       </div>
- 
+
     </section>
   </div>
 </main>
- 
+
 <script>
-  /* GoHighLevel Booking Widget – Auto-Resize */
+  /* GoHighLevel Booking Widget - Auto-Resize */
   (function () {
     var script = document.createElement('script');
     script.src = 'https://link.msgsndr.com/js/form_embed.js';
@@ -718,6 +370,6 @@
     document.body.appendChild(script);
   })();
 </script>
- 
+
 </body>
 </html>
